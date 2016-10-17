@@ -1,0 +1,9 @@
+#!/bin/bash
+
+build_dir="$1"
+cache_dir="$2"
+env_dir="$3"
+
+SUBAPP_DIR="$(cat "$env_dir"/SUBAPP_DIR)"
+cd "$build_dir/$SUBAPP_DIR"
+bundle exec rake assets:precompile
